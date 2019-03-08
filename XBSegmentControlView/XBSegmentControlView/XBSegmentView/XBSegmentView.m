@@ -48,7 +48,7 @@
     [self createSubviews];
     
     CGFloat multiplie = 1.0 / self.arr_title.count;
-
+    
     UIView *lastView = nil;
     for (NSString *title in self.arr_title)
     {
@@ -113,7 +113,7 @@
     {
         self.bl_selected(weakSelf, index);
     }
-
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(chooseView:clickAtIndex:)])
     {
         [self.delegate chooseView:weakSelf clickAtIndex:index];
@@ -124,28 +124,20 @@
 - (void)createSubviews
 {
     //边框
-    UIView *borderView = [UIView new];
-    [self addSubview:borderView];
-    
-    [borderView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
-    
-    borderView.layer.cornerRadius = self.f_cornerRadius;
-    borderView.layer.borderWidth = self.f_borderWidth;
-    borderView.layer.borderColor = self.color_border.CGColor;
-    
-    //button背景
-    self.contentView = [UIView new];
-    [borderView addSubview:self.contentView];
-    
-    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(borderView).offset(self.f_borderWidth);
-        make.bottom.right.equalTo(borderView).offset(- self.f_borderWidth);
-    }];
-    
-    self.contentView.layer.cornerRadius = self.f_cornerRadius;
-    self.contentView.clipsToBounds = YES;
+    self.contentView = ({
+        UIView *borderView = [UIView new];
+        [self addSubview:borderView];
+        
+        [borderView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self);
+        }];
+        
+        borderView.layer.cornerRadius = self.f_cornerRadius;
+        borderView.layer.borderWidth = self.f_borderWidth;
+        borderView.layer.borderColor = self.color_border.CGColor;
+        borderView.clipsToBounds = YES;
+        borderView;
+    });
 }
 
 
@@ -241,3 +233,4 @@
     return _f_cornerRadius;
 }
 @end
+
