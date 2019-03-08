@@ -148,7 +148,7 @@
 			children = (
 				F17B1F122232091300EC63D2 /* XBButton */,
 				F17B1EEA2232060600EC63D2 /* Masonry */,
-				F17B1EE5223205B400EC63D2 /* XBSegmentControlView */,
+				F17B1EE5223205B400EC63D2 /* XBSegmentView */,
 				F17B1EB32232058F00EC63D2 /* AppDelegate.h */,
 				F17B1EB42232058F00EC63D2 /* AppDelegate.m */,
 				F17B1EB62232058F00EC63D2 /* ViewController.h */,
@@ -180,14 +180,14 @@
 			path = XBSegmentControlViewUITests;
 			sourceTree = "<group>";
 		};
-		F17B1EE5223205B400EC63D2 /* XBSegmentControlView */ = {
+		F17B1EE5223205B400EC63D2 /* XBSegmentView */ = {
 			isa = PBXGroup;
 			children = (
 				F17B1EE6223205C900EC63D2 /* XBSegmentView.h */,
 				F17B1EE7223205C900EC63D2 /* XBSegmentView.m */,
 				F17B1EE9223205E600EC63D2 /* XBSegmentViewConfig.h */,
 			);
-			path = XBSegmentControlView;
+			path = XBSegmentView;
 			sourceTree = "<group>";
 		};
 		F17B1EEA2232060600EC63D2 /* Masonry */ = {
